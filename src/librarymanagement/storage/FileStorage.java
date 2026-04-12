@@ -54,7 +54,7 @@ public class FileStorage {
     }
 
     private List<Book> readBooks() throws IOException {
-        List<Book> books = new ArrayList<Book>();
+        List<Book> books = new ArrayList<>();
         if (!Files.exists(booksFile)) {
             return books;
         }
@@ -83,7 +83,7 @@ public class FileStorage {
     }
 
     private List<Member> readMembers() throws IOException {
-        List<Member> members = new ArrayList<Member>();
+        List<Member> members = new ArrayList<>();
         if (!Files.exists(membersFile)) {
             return members;
         }
@@ -110,7 +110,7 @@ public class FileStorage {
     }
 
     private List<LoanRecord> readLoans() throws IOException {
-        List<LoanRecord> loans = new ArrayList<LoanRecord>();
+        List<LoanRecord> loans = new ArrayList<>();
         if (!Files.exists(loansFile)) {
             return loans;
         }
@@ -141,7 +141,7 @@ public class FileStorage {
     }
 
     private void writeBooks(Collection<Book> books) throws IOException {
-        List<String> lines = new ArrayList<String>();
+        List<String> lines = new ArrayList<>();
         for (Book book : books) {
             lines.add(String.join("|",
                     book.getId(),
@@ -156,7 +156,7 @@ public class FileStorage {
     }
 
     private void writeMembers(Collection<Member> members) throws IOException {
-        List<String> lines = new ArrayList<String>();
+        List<String> lines = new ArrayList<>();
         for (Member member : members) {
             lines.add(String.join("|",
                     member.getId(),
@@ -169,7 +169,7 @@ public class FileStorage {
     }
 
     private void writeLoans(Collection<LoanRecord> loans) throws IOException {
-        List<String> lines = new ArrayList<String>();
+        List<String> lines = new ArrayList<>();
         for (LoanRecord loan : loans) {
             lines.add(String.join("|",
                     loan.getId(),
