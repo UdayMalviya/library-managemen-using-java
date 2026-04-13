@@ -36,54 +36,25 @@ public class LibraryConsoleApp {
             try {
                 // Keep the full menu routing in one place so each command stays easy to trace.
                 switch (choice) {
-                    case 1:
-                        addBook();
-                        break;
-                    case 2:
-                        listBooks(service.getAllBooks());
-                        break;
-                    case 3:
-                        searchBooks();
-                        break;
-                    case 4:
-                        removeBook();
-                        break;
-                    case 5:
-                        registerMember();
-                        break;
-                    case 6:
-                        listMembers(service.getAllMembers());
-                        break;
-                    case 7:
-                        searchMembers();
-                        break;
-                    case 8:
-                        removeMember();
-                        break;
-                    case 9:
-                        issueBook();
-                        break;
-                    case 10:
-                        returnBook();
-                        break;
-                    case 11:
-                        listLoans(service.getActiveLoans(), "Active Loans");
-                        break;
-                    case 12:
-                        listLoans(service.getOverdueLoans(), "Overdue Loans");
-                        break;
-                    case 13:
-                        listLoans(service.getLoansWithOutstandingFines(), "Outstanding Fines");
-                        break;
-                    case 14:
-                        payFine();
-                        break;
-                    case 15:
+                    case 1 -> addBook();
+                    case 2 -> listBooks(service.getAllBooks());
+                    case 3 -> searchBooks();
+                    case 4 -> removeBook();
+                    case 5 -> registerMember();
+                    case 6 -> listMembers(service.getAllMembers());
+                    case 7 -> searchMembers();
+                    case 8 -> removeMember();
+                    case 9 -> issueBook();
+                    case 10 -> returnBook();
+                    case 11 -> listLoans(service.getActiveLoans(), "Active Loans");
+                    case 12 -> listLoans(service.getOverdueLoans(), "Overdue Loans");
+                    case 13 -> listLoans(service.getLoansWithOutstandingFines(), "Outstanding Fines");
+                    case 14 -> payFine();
+                    case 15 -> {
                         running = false;
                         System.out.println("Library system closed.");
-                        break;
-                    default:
-                        System.out.println("Please choose a menu option between 1 and 15.");
+                    }
+                    default -> System.out.println("Please choose a menu option between 1 and 15.");
                 }
             } catch (IllegalArgumentException ex) {
                 System.out.println("Input error: " + ex.getMessage());
